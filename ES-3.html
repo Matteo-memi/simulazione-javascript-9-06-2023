@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //Esercizio 3: Set
+//Scrivi una funzione chiamata unisciSet che prenda in input due set composti da 5 numeri ciascuno, e restituisca
+//un nuovo set contenente tutti gli elementi del primo che NON sono presenti nel secondo.
+//Stampare in output il set risultante.
+    function unisciSet(set1, set2) {
+  let differenza = new Set();
+
+  set1.forEach(function(elemento) {
+    let presente = false;
+
+    set2.forEach(function(item) {
+      if (item === elemento) {
+        presente = true;
+      }
+    });
+
+    if (!presente) {
+      differenza.add(elemento);
+    }
+  });
+
+  return differenza;
+}
+
+let set1 = new Set([1, 2, 3, 4, 5]);
+let set2 = new Set([4, 5, 6, 7, 8]);
+
+let risultato = unisciSet(set1, set2);
+console.log("Risultato:", risultato);
+
+</script>
+<body>
+    
+</body>
+</html>

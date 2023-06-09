@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+   // Esercizio 2: Letterali oggetti
+//Scrivi una funzione confrontaOggetti che prenda in input due oggetti con caratteristiche (proprietà e valori)
+//scelti a piacere e restituisca true se hanno le stesse proprietà e se tutti i valori delle loro proprietà
+//corrispondenti sono uguali, altrimenti false.
+function confrontaOggetti(oggetto1, oggetto2) {
+  const chiave1 = Object.keys(oggetto1);
+  const chiave2 = Object.keys(oggetto2);
+
+  if (chiave1.length !== chiave2.length) {
+    return false;
+  }
+
+  for (let i = 0; i < chiave1.length; i++) {
+    const chiave = chiave1[i];
+    if (oggetto1[chiave] !== oggetto2[chiave]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+const oggetto1 = { nome: "Finn", cognome: "Mertens", età: 16 };
+const oggetto2 = { nome: "Finn", cognome: "Mertens", età: 16 };
+const oggetto3 = { nome: "jake", cognome: "The dog", età: 30 };
+
+console.log(confrontaOggetti(oggetto1, oggetto2)); // Output: true
+console.log(confrontaOggetti(oggetto1, oggetto3)); // Output: false
+
+</script>
+<body>
+    
+</body>
+</html>

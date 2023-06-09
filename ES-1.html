@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //Esercizio 1: Letterali oggetti
+//Scrivi una funzione che prenda in input un array di 6 oggetti rappresentanti persone (nome, cognome, età) e
+//restituisca un nuovo array contenente solo le persone con un'età superiore a 30 anni. Stampare le informazioni
+//di tutte le persone del nuovo array.
+
+    function filtroetà(Array) {
+  let filtropersone = [];
+  for (let i = 0; i < Array.length; i++) {
+    if (Array[i].età > 30) {
+      filtropersone.push(Array[i]);
+    }
+  }
+  return filtropersone;
+}
+
+const persone = [
+  { nome: "Finn", cognome: "Mertens", età: 17 },
+  { nome: "Jake", cognome: "the dog", età: 30 },
+  { nome: "Peppermint", cognome: "Butler", età: 300 },
+  { nome: "ice", cognome: "king", età: 1043 },
+  { nome: "The", cognome: "Lich", età: 15000000000 },
+  { nome: "Gunter", cognome: "Orgalorg", età: 8383939300202 }
+];
+
+const filtropersone = filtroetà(persone);
+for (let i = 0; i < filtropersone.length; i++) {
+  console.log("Nome: " + filtropersone[i].nome + ", Cognome: " + filtropersone[i].cognome + ", Età: " + filtropersone[i].età);
+}
+
+</script>
+<body>
+    
+</body>
+</html>

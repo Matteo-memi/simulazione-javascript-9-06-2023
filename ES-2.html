@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //Esercizio 2: Map
+//Scrivi una funzione chiamata moltiplicaArray che prenda in input un array di numeri e un numero intero, che
+//funge da "fattore di moltiplicazione". La funzione deve restituire un nuovo array in cui ogni numero dell'array
+//originale è moltiplicato per il fattore di moltiplicazione dato.
+//Chiamare la funzione 3 volte, con 3 array e 3 fattori di moltiplicazione differenti per stampare in output i 3
+//array prodotti.
+    function moltiplicaArray(array, fattore) {
+  let risultato = array.map(function(numero) {
+    return numero * fattore;
+  });
+  return risultato;
+}
+
+let array1 = [1, 2, 3, 4, 5];
+let fattore1 = 2;
+let risultato1 = moltiplicaArray(array1, fattore1);
+console.log("Primo risultato:", risultato1);
+
+let array2 = [30, 40, 60, 80, 1000];
+let fattore2 = 10;
+let risultato2 = moltiplicaArray(array2, fattore2);
+console.log("Secondo risultato:", risultato2);
+
+let array3 = [5, 10, 15, 20, 25];
+let fattore3 = 5;
+let risultato3 = moltiplicaArray(array3, fattore3);
+console.log("Terzo risultato:", risultato3);
+
+</script>
+<body>
+    
+</body>
+</html>

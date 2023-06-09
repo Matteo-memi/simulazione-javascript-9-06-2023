@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //Esercizio 1: Date
+//Scrivi una funzione chiamata calcolaGiorni che prenda in input due oggetti Date rappresentanti due date
+//diverse e restituisca il numero di giorni trascorsi tra le due date.
+//Chiamare la funzione per stampare in output il risultato.
+//La funzione deve prendere in considerazione questa caratteristica: se la seconda data è un giorno
+//cronologicamente pari o successivo alla prima data, si procede con la normale esecuzione sopra elencata.
+//Se la seconda data è un giorno cronologicamente precedente alla prima data, viene prodotto manualmente un
+//errore che blocca l'applicazione.
+function calcolaGiorni(data1, data2) {
+  if (data2 >= data1) {
+    const Giorno = 24 * 60 * 60 * 1000;
+    const diffTempo = data2.getTime() - data1.getTime();
+    const diffGiorni = (diffTempo / Giorno) + 1;
+    return parseInt(diffGiorni, 10);
+  } else {
+    throw new Error("Errore la seconda data è un giorno cronologicamente precedente alla prima");
+  }
+}
+
+// Esempio di utilizzo della funzione calcolaGiorni
+const primaData = new Date("2001-09-11");
+const secondaData = new Date("2023-06-09");
+
+try {
+  const giorniTrascorsi = calcolaGiorni(primaData, secondaData);
+  console.log("Giorni trascorsi:", giorniTrascorsi);
+} catch (errore) {
+  console.log(errore.message);
+}
+ 
+
+
+
+
+</script>
+<body>
+    
+</body>
+</html>

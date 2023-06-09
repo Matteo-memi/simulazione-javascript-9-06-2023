@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+   // Esercizio 4: Funzioni
+//Crea una funzione chiamata salutaPersona che prende in ingresso un oggetto.
+//Se l'oggetto passato come parametro NON ha una proprietà chiamata "rate", la funzione stampa il messaggio
+//"nessun rate". In caso contrario, se il valore della proprietà rate è compreso tra 0 e 10, stampa "rate basso", se
+//è compreso tra 11 e 50 stampa "rate medio", se è compreso tra 51 e 100 stampa "rate alto".
+//es
+//salutaPersona({nome: mario rossi}) -> nessun rate
+//salutaPersona(rate: 95) -> rate alto
+function salutaPersona(persona) {
+  if (persona.rate === undefined) {
+    console.log("nessun rate");
+  } else {
+    let rate = persona.rate;
+    if (rate >= 0 && rate <= 10) {
+      console.log("rate basso");
+    } else if (rate >= 11 && rate <= 50) {
+      console.log("rate medio");
+    } else if (rate >= 51 && rate <= 100) {
+      console.log("rate alto");
+    }
+  }
+}
+
+let persona1 = { nome: "Mario", rate: 5 };
+salutaPersona(persona1);  // Output: rate basso
+
+let persona2 = { nome: "Paolo", rate: 30 };
+salutaPersona(persona2);  // Output: rate medio
+
+let persona3 = { nome: "Matteo", rate: 75 };
+salutaPersona(persona3);  // Output: rate alto
+
+let persona4 = { nome: "Luca" };
+salutaPersona(persona4);  // Output: nessun rate
+
+
+</script>
+<body>
+    
+</body>
+</html>
